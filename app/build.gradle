@@ -1,0 +1,138 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.alikit.news"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    "src/main/res/",
+                    "src/main/res/layouts/screens",
+                    "src/main/res/layouts/uicontainers",
+                    "src/main/res/layouts/items"
+            ]
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Compatibility Library
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+
+    // Design
+    implementation 'com.google.android.material:material:1.3.0-alpha01'
+
+    // SwipeRefreshLayout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    // Butter Knife
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    // CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // Toasty
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+    // Preference
+    implementation "androidx.legacy:legacy-preference-v14:1.0.0"
+    implementation 'androidx.preference:preference:1.1.1'
+
+    // OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+    // Moshi
+    implementation 'com.squareup.moshi:moshi:1.9.2'
+    implementation 'com.squareup.moshi:moshi-adapters:1.9.2'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // Navigation Controller
+    implementation 'com.github.dtrung98:SamfNavigation:2.9.6'
+
+    // Jetpack Navigation
+    //implementation "androidx.navigation:navigation-fragment:2.1.0"
+    //implementation "androidx.navigation:navigation-ui:2.1.0"
+
+    // Scalar converter
+    implementation 'com.squareup.retrofit2:converter-scalars:2.7.2'
+
+    // Room
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
+
+    // Lifecycle
+    implementation "android.arch.lifecycle:extensions:2.2.0"
+    annotationProcessor "androidx.lifecycle:lifecycle-common-java8:2.2.0"
+
+    // Jsoup HTML parser library @ https://jsoup.org/
+    implementation 'org.jsoup:jsoup:1.11.3'
+
+    // Round Image View
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // Custom Loading View
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // Provide Over scroll Effect
+    implementation 'com.github.ldt-libs:SpringBackLayout:1.0'
+}

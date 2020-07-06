@@ -1,0 +1,2 @@
+rootProject.name='Ali News'
+include ':app'
